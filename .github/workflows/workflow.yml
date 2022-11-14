@@ -1,0 +1,16 @@
+name: Build, deploy to DEV
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  update-apache:
+    runs-on: [self-hosted, linux, x64, test]
+    name: Update index
+    steps:
+
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: replace html
+        run: yes | cp -R index.html /var/www/html/index.html
