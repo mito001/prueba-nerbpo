@@ -1,7 +1,7 @@
-name: Build, deploy to DEV
+name: Update Nearbpo !
 on:
   push:
-    branches: [develop]
+    branches: [main]
 
 jobs:
   update-apache:
